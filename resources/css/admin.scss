@@ -1,0 +1,78 @@
+
+// @import 'intl-tel-input/build/css/intlTelInput.css';
+// @import "/node_modules/select2/dist/css/select2.css";
+/* admin */
+.sidebar{
+    top: 0;
+    left : 0;
+    z-index : 100;
+    overflow-y: auto;
+  }
+  
+  .overlay{
+    background-color: rgb(0 0 0 / 45%);
+    z-index: 99;
+  }
+  
+  /* sidebar for small screens */
+  @media (max-width: 767px){
+    
+    .sidebar{
+      width: 50%;
+      max-width: 20rem;
+      transform : translateX(-100%);
+      transition : transform 0.4s ease-out;
+    }
+    
+    .sidebar.active{
+      transform : translateX(0);
+    }
+  
+  }
+  div#DataTables_Table_0_filter,  div#DataTables_Table_1_filter {
+    float: right;
+}
+div#DataTables_Table_0_paginate,div#DataTables_Table_1_paginate {
+  float: right;
+}
+.iti{
+  display: block;
+}
+.select2-container{
+  width: 100% !important;
+}
+#sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+#sidebar {
+-ms-overflow-style: none;  
+scrollbar-width: none;  
+}
+.bg-maroon {
+  background-color: rgba(17, 33, 56, 1);
+}
+.outline-none{
+  outline: none;
+}
+div.chips_input {
+  row-gap: 0.5rem;
+  --primary: #f8fafc;
+  --secondary: #111;
+  --invalid: #f00;
+}
+div.chips_input > div.inner {
+  min-height: 2rem;
+  gap: 0.75rem;
+}
+span.chip {
+  padding: 0.25rem 0.5rem;
+}
+span.chip > button {
+  top: 50%;
+  right: 0.15rem;
+  transform: translateY(-50%);
+}
+span.limit {
+  float: right;
+}
