@@ -31,8 +31,38 @@ $lite-gray: #f6f6f6 ;
 .text-el-blue {
   color: $el-blue;
 }
+.w-60{
+  width: 60%;
+}
 @media(min-width:720px){
   .text-md-start{
     text-align: left;
   }
 }
+.form-control::placeholder {
+  opacity: 0.6;
+  font-size: 14px;
+}
+.circle{
+  border-radius: 50%;
+}
+// login
+.user-page{
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.user-page-content{
+  overflow: hidden;
+  border-radius: 18px;
+}
+// profile
+.user-profile-content{
+  border-radius: 18px;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+.user-profile-content .label{
+  font-size: 12px;
+}
+// alumni
+

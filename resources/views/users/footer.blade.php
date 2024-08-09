@@ -1,6 +1,6 @@
 <div class="bg-el-blue">
     <div class="container">
-        <footer class="row  py-5 my-5 border-top">
+        <footer class="row  py-5 border-top">
             <div class="col-12 col-md-3 mb-3">
               <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
                 <img src="/images/logo-footer.png" alt="Elegant Public School Alumni" class="mx-auto mx-md-0">

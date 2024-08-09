@@ -7,6 +7,16 @@ use App\Http\Alumni\AlumniController;
 use Illuminate\Support\Facades\Route;
 
 
+Route::get('/user-login', function () {
+    return view('users.userLogin');
+});
+Route::get('/user-profile', function () {
+    return view('users.userProfile');
+});
+Route::get('/alumni-members', function () {
+    return view('users.alumni');
+});
+
 // user
 Route::prefix('')->group(function(){
     // Authenication
