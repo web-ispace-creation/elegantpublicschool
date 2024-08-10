@@ -39,6 +39,7 @@ $lite-gray: #f6f6f6 ;
     text-align: left;
   }
 }
+
 .form-control::placeholder {
   opacity: 0.6;
   font-size: 14px;
@@ -46,15 +47,27 @@ $lite-gray: #f6f6f6 ;
 .circle{
   border-radius: 50%;
 }
+
 // login
 .user-page{
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding: 7% 10%;
+}
+.user-login{
+  padding: 14% 10% !important;
+}
+@media(width <= 524px){
+  .user-page{
+    padding: 7% 3%;
+  }
+  .user-login{
+    padding: 5% !important;
+  }
 }
 .user-page-content{
   overflow: hidden;
   border-radius: 18px;
 }
+
 // profile
 .user-profile-content{
   border-radius: 18px;
@@ -64,5 +77,57 @@ $lite-gray: #f6f6f6 ;
 .user-profile-content .label{
   font-size: 12px;
 }
-// alumni
+#profileEditModal{
+  .modal-body{
+    label{
+      font-size: 12px;
+    }
+    input{
+      background-color: transparent;
+    }
+  }
+}
 
+// alumni
+.alumni-header {
+  padding:130px 0 180px 0;
+  position: absolute;
+}
+.alumni-filter select{
+  background-color: transparent;
+  margin-bottom: 40px;
+  outline: none;
+}
+.alumni-students-section{
+  position: relative;
+  margin-top: 300px;
+  padding:0 15%;
+}
+@media(width <= 720px){
+  .alumni-students-section{
+    position: relative;
+    margin-top: 345px;
+    padding:0 10%;
+  }
+}
+@media(width <= 524px){
+  .alumni-header{
+    padding: 100px 0;
+  }
+  .alumni-students-section{
+    padding:0 5%;
+  }
+}
+.alumni-students{
+  .card{
+    --bs-card-border-width: 12px;
+    --bs-card-border-color: rgba(54,68,115,0.1);
+  }
+  .card p{
+    font-size: 12px;
+  }
+  .card-body{
+    padding: 5px 10px;
+    background-color: rgba(54,68,115,0.1);
+  }
+}

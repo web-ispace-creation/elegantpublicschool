@@ -5,11 +5,11 @@
     <div class="container user-page text-el-blue w-75">
         <div class="user-page-content d-flex flex-wrap">
             <div class="col-12 col-md-4 bg-el-blue d-flex align-items-center justify-content-center">
-                <img src="/images/logo-white.png" class="w-50 p-3">
+                <img src="/images/logo-white.png" class="w-75 p-3">
             </div>
-            <div class="col-12 col-md-8 py-4 py-md-5 px-md-5 bg-white">
+            <div class="user-login col-12 col-md-8 bg-white">
                 <p class="text-center">Login</p>
-                <div class="px-3 px-md-5">
+                <div class="px-3 px-md-3">
                     <form>
                         <div class="mb-3">
                           <small for="userEmail" class="form-label">Email</small>
