@@ -29,13 +29,10 @@ class AuthController extends Controller
     {
         try {
             $res = $this->service->register($request);
-            if($res['status'] != 200){
-                return redirect()->back()->withErrors($res['msg'])->withInput();
-            }else{
-                return redirect()->back()->withSuccess('Added Successfully, Password link will be shared to your email!');
-            }
+            return response()->json($res);
         } catch (\Throwable $th) {
-            return redirect()->back()->withErrors(['unknown'=>'Sorry,Something went wrong!'])->withInput();;
+            dd($th);
+            return response()->json(['status'=>500,'msg'=>'Sorry, Something went wrong!']);
         }
     }
     public function index()

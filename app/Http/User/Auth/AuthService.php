@@ -26,20 +26,32 @@ class AuthService
     public function register($request)
     {
         $validator = Validator::make($request->all(), [
+            'first_name'=>'required',
+            'last_name'=>'required',
             'email' => 'required|email|unique:users',
-            'name' => 'required|string|unique:users',
+            'phone' => 'required|numeric|unique:alumni_details,phone',
+            'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000',
+            'course.*' =>   'required',
+            'institution.*' =>   'required',
+            'in_fr.*' =>   'required',
+            'in_to.*' =>   'required',
+            'designation.*' =>   'required',
+            'company.*' =>   'required',
+            'comp_from.*' =>   'required',
+            'comp_to.*' =>   'required',
+            'dob' => 'required|date',
+            'batch' => 'required|numeric|min:2000|max:2024',
+            'from' => 'required|date',
+            'to' => 'required|date|after_or_equal:from',
+            'password'=>'required|confirmed',
         ]);
         if ($validator->fails()) {
-            return ['msg'=>$validator->messages(),'status'=>403];
+            return ['msg'=>$validator->messages()->first(),'status'=>403];
         }else{
-            $res = $this->repository->storeData($request->all());
-            $url = URL::temporarySignedRoute(
-                'admin.verify.bycreator', 
-                now()->addMinutes(60), 
-                ['admin_id' => $res->id]
-            );
-            Notification::route('mail', 'web.ispacecreation@gmail.com')->notify(new AdminPasswordNotification($url,$request->email));
-            return ['msg'=>'Added Successfully!','status'=>200];
+            dd($request);
+            $res = $this->repository->storeData($request);
+            dd($res);
+            // return ['msg'=>,'status'=>200];
         }
     }
     public function sendPasswordResetLink($id)

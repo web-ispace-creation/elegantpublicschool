@@ -20,7 +20,7 @@ Route::get('/alumni-members', function () {
 // user
 Route::prefix('')->group(function(){
     // Authenication
-    Route::prefix('auth')->group(function(){
+    // Route::prefix('auth')->group(function(){
         Route::get('/register', [userAuthController::class, 'viewRegister'])->name('user.register');;
         Route::any('/store', [userAuthController::class, 'register'])->name('user.store');
         Route::get('/verify/bycreator/{user_id}', [userAuthController::class, 'verifyByCreator'])->name('user.verify.bycreator');
@@ -35,7 +35,7 @@ Route::prefix('')->group(function(){
     Route::middleware(['auth'])->group(function(){
         Route::get('/',[AlumniController::class,'index']);
     });
-});
+// });
 
 // Admin
 Route::prefix('admin')->group(function(){

@@ -30,7 +30,7 @@ class Authenticate extends Middleware
             if (in_array('auth:admin', $middlewares)) {
                 return route('admin.login');
             } else {
-                return route('user.signin');
+                return route('user.login');
             }
         }else{
             return response()->json(['status'=>500,'msg'=>'Sorry,something went wrong!'],500);
