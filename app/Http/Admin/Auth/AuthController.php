@@ -35,7 +35,7 @@ class AuthController extends Controller
                 return redirect()->back()->withSuccess('Added Successfully, Password link will be shared to your email!');
             }
         } catch (\Throwable $th) {
-            return redirect()->back()->withErrors(['unknown'=>'Sorry,Something went wrong!'])->withInput();;
+            return redirect()->back()->withErrors(['unknown'=>'Sorry,Something went wrong!'])->withInput();
         }
     }
     public function index()

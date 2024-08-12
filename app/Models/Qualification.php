@@ -10,7 +10,7 @@ class Qualification extends Model
     use HasFactory;
 
     protected $fillable = [
-        'course ',
+        'course',
         'institution_name',
         'from',
         'to',

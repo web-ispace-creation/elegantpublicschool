@@ -14,7 +14,9 @@ use Illuminate\Support\Str;
 use App\Notifications\AdminPasswordNotification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
+use Image;
 
 class AuthService
 {
@@ -45,13 +47,17 @@ class AuthService
             'to' => 'required|date|after_or_equal:from',
             'password'=>'required|confirmed',
         ]);
-        if ($validator->fails()) {
-            return ['msg'=>$validator->messages()->first(),'status'=>403];
-        }else{
-            dd($request);
-            $res = $this->repository->storeData($request);
-            dd($res);
-            // return ['msg'=>,'status'=>200];
+            if ($validator->fails()) {
+                return ['msg'=>$validator->messages()->first(),'status'=>403];
+            }else{
+                $imageName = $request->file('image')->store('public/images/profile');
+                $request->merge(['image' => basename($imageName)]);
+                $res = $this->repository->storeData($request);
+                if($res){
+                    return ['msg'=>'Successfully Stored','status'=>200];
+                }else{
+                    return ['msg'=>'Sorry, Something went wrong!','status'=>500];
+                }
         }
     }
     public function sendPasswordResetLink($id)
@@ -91,9 +97,8 @@ class AuthService
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        if (Auth::guard('admin')->attempt($credentials)) {
-            $sendMail = $this->sendMail($credentials['email']);
-            return $sendMail;
+        if (Auth::attempt($credentials)) {
+            return 200;
         }else{
             return 500;
         }

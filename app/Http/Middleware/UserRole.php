@@ -15,8 +15,15 @@ class UserRole
      */
     public function handle(Request $request, Closure $next,$role): Response
     {
-        if (! $request->user() || ! $request->user()->role === 'admin') {
-            abort(403, 'Unauthorized action.');
+        if($role == 'admin'){
+            if ($request->user() && $request->user()->role !== 'admin') {
+                abort(403, 'Unauthorized action.');
+            }
+        }
+        if($role == 'member'){
+            if ($request->user() && ($request->user()->role !== 'admin' && $request->user()->role !== 'member')) {
+                abort(403, 'Unauthorized action.');
+            }
         }
 
         return $next($request);

@@ -49,16 +49,11 @@ $lite-gray: #f6f6f6 ;
 }
 
 // login
-.user-page{
-  padding: 7% 10%;
-}
+
 .user-login{
   padding: 14% 10% !important;
 }
 @media(width <= 524px){
-  .user-page{
-    padding: 7% 3%;
-  }
   .user-login{
     padding: 5% !important;
   }
@@ -66,6 +61,7 @@ $lite-gray: #f6f6f6 ;
 .user-page-content{
   overflow: hidden;
   border-radius: 18px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 // profile

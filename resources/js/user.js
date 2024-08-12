@@ -75,7 +75,11 @@ $('.signup form').on('submit',function(e){
         processData:false,
         contentType:false,
         success:function(res){
-            console.log(res)
+            if(res.status == 200){
+                alert('Successfully Registered! Wait for 48 hours until admin approve your request. Thank You!')
+            }else{
+                alert(res.msg);
+            }
         }
     })
 })

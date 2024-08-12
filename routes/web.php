@@ -7,23 +7,20 @@ use App\Http\Alumni\AlumniController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/user-login', function () {
-    return view('users.userLogin');
-});
 Route::get('/user-profile', function () {
     return view('users.userProfile');
 });
-Route::get('/alumni-members', function () {
-    return view('users.alumni');
-});
+// Route::get('/alumni-members', function () {
+//     return view('users.alumni');
+// });
 
 // user
 Route::prefix('')->group(function(){
     // Authenication
-    // Route::prefix('auth')->group(function(){
-        Route::get('/register', [userAuthController::class, 'viewRegister'])->name('user.register');;
+    Route::prefix('auth')->group(function(){
+        Route::get('/register', [userAuthController::class, 'viewRegister'])->name('user.register');
         Route::any('/store', [userAuthController::class, 'register'])->name('user.store');
-        Route::get('/verify/bycreator/{user_id}', [userAuthController::class, 'verifyByCreator'])->name('user.verify.bycreator');
+        // Route::get('/verify/bycreator/{user_id}', [userAuthController::class, 'verifyByCreator'])->name('user.verify.bycreator');
         Route::any('/reset-password/{token}', [userAuthController::class, 'passwordReset'])->name('user.password.reset');
         Route::any('/update-password', [userAuthController::class, 'passwordUpdate'])->name('user.password.update');
         Route::any('/login', [userAuthController::class, 'login'])->name('user.login');
@@ -32,10 +29,10 @@ Route::prefix('')->group(function(){
         Route::any('/verifyOtp', [userAuthController::class, 'verifyOtp'])->name('user.verifyOtp');
         Route::any('/logout', [userAuthController::class, 'logout'])->name('user.logout');
     });
-    Route::middleware(['auth'])->group(function(){
-        Route::get('/',[AlumniController::class,'index']);
+    Route::middleware(['auth','role:member'])->group(function(){
+        Route::get('/',[AlumniController::class,'index'])->name('users.index');
     });
-// });
+});
 
 // Admin
 Route::prefix('admin')->group(function(){
@@ -54,5 +51,8 @@ Route::prefix('admin')->group(function(){
     });
     Route::middleware(['auth:admin','role:admin'])->group(function(){
         Route::get('/',[AdminIndexController::class,'index'])->name('admin.index');
+        Route::get('/get-alumni-datatable',[AdminIndexController::class,'getDataTable'])->name('admin.get.alumni.datatable');
+        Route::get('/get-alumni-member-data',[AdminIndexController::class,'getAlumniDataWithId'])->name('admin.get.alumni.member.data');
+        Route::post('/approve-member',[AdminIndexController::class,'approveMember'])->name('admin.approve.alumni.member');
     });
 });

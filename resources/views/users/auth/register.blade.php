@@ -44,7 +44,7 @@
             </div>
             <div class="bg-white rounded p-4 mt-3">
                 <h3 class="text-el-blue mb-3">Signup</h3>
-                <form>
+                <form enctype="multipart/form-data">
                     @csrf
                     <div class="row row-cols-1 row-cols-md-2">
                       <div class="col mb-3">

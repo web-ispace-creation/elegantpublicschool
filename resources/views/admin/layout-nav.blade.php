@@ -19,7 +19,7 @@
       </a> --}} -->
       
 
-      <button class="list-group-item list-group-item-action list-group-item-dark border-0 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#slider-collapse">
+      {{-- <button class="list-group-item list-group-item-action list-group-item-dark border-0 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#slider-collapse">
         <div>
           <span class="bi bi-box"></span>
           <span class="ms-2">Slider</span>
@@ -32,7 +32,7 @@
             <span class="ms-2">Home Hero Slider</span>
           </a>
         </div>
-      </div>
+      </div> --}}
       {{-- <!-- products -->
       <button class="list-group-item list-group-item-action list-group-item-dark border-0 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#sale-collapse">
         <div>

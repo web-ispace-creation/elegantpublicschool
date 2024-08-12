@@ -31,7 +31,6 @@ class AuthController extends Controller
             $res = $this->service->register($request);
             return response()->json($res);
         } catch (\Throwable $th) {
-            dd($th);
             return response()->json(['status'=>500,'msg'=>'Sorry, Something went wrong!']);
         }
     }
@@ -47,29 +46,27 @@ class AuthController extends Controller
     {
         return $this->service->passwordUpdate($request);
     }
-    public function verifyByCreator(Request $request)
-    {
-        try {
-            $this->service->sendPasswordResetLink($request->route('user_id'));
-        } catch (\Throwable $th) {
-            return response()->json(['msg'=>'Sorry something went wrong']);
-        }
-    }
+    // public function verifyByCreator(Request $request)
+    // {
+    //     try {
+    //         $this->service->sendPasswordResetLink($request->route('user_id'));
+    //     } catch (\Throwable $th) {
+    //         return response()->json(['msg'=>'Sorry something went wrong']);
+    //     }
+    // }
     public function authenticate(Request $request)
     {
         try {
             $res =  $this->service->authenticate($request);
             if($res == '200'){
-                return redirect()->route('users.viewOtp');
+                return redirect()->route('users.index');
             }else{
                 return back()->withErrors([
                     'email' => 'The provided credentials do not match our records.',
                 ])->onlyInput('email');
             }
         } catch (\Throwable $th) {
-            return back()->withErrors([
-                'email' => 'Sorry something went wrong',
-            ]);
+            return back()->withErrors($th->validator);
         }
         
     }
