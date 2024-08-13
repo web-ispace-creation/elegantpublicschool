@@ -28,8 +28,7 @@ class AuthService
     public function register($request)
     {
         $validator = Validator::make($request->all(), [
-            'first_name'=>'required',
-            'last_name'=>'required',
+            'name'=>'required',
             'email' => 'required|email|unique:users',
             'phone' => 'required|numeric|unique:alumni_details,phone',
             'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000',
@@ -50,9 +49,10 @@ class AuthService
             if ($validator->fails()) {
                 return ['msg'=>$validator->messages()->first(),'status'=>403];
             }else{
-                $imageName = $request->file('image')->store('public/images/profile');
-                $request->merge(['image' => basename($imageName)]);
-                $res = $this->repository->storeData($request);
+                $image = $request->file('image');
+                $imageName = time() . '.' . $image->getClientOriginalExtension();
+                $image->storeAs('public/images/profile', $imageName);
+                $res = $this->repository->storeData($request,$imageName);
                 if($res){
                     return ['msg'=>'Successfully Stored','status'=>200];
                 }else{

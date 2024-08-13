@@ -6,11 +6,11 @@ use App\Models\User;
 
 class AuthRepository
 {
-    public function storeData($request)
+    public function storeData($request,$imageName)
     {
         // Create the User
         $user = User::create([
-            'name' => $request->first_name,
+            'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password, // Hashing the password
         ]);
@@ -18,7 +18,7 @@ class AuthRepository
         // Create Alumni Details
         $user->alumniDetails()->create([
             'phone' => $request->phone,
-            'image' => $request->image, 
+            'image' => $imageName, 
             'dob' => $request->dob,
             'batch' => $request->batch,
             'from' => $request->from,
@@ -26,23 +26,26 @@ class AuthRepository
         ]);
 
         // Create Qualifications
-        foreach ($request->course as $index => $course) {
-            $user->qualifications()->create([
-                'course' => $course,
-                'institution_name' => $request->institution[$index],
-                'from' => $request->in_fr[$index],
-                'to' => $request->in_to[$index],
-            ]);
+        if($request->course !== null){
+            foreach ($request->course as $index => $course) {
+                $user->qualifications()->create([
+                    'course' => $course,
+                    'institution_name' => $request->institution[$index],
+                    'from' => $request->in_fr[$index],
+                    'to' => $request->in_to[$index],
+                ]);
+            }
         }
-
         // Create Experiences
-        foreach ($request->designation as $index => $designation) {
-            $user->experience()->create([
-                'designation' => $designation,
-                'company' => $request->company[$index],
-                'from' => $request->comp_from[$index],
-                'to' => $request->comp_to[$index],
-            ]);
+        if($request->course !== null){
+            foreach ($request->designation as $index => $designation) {
+                $user->experience()->create([
+                    'designation' => $designation,
+                    'company' => $request->company[$index],
+                    'from' => $request->comp_from[$index],
+                    'to' => $request->comp_to[$index],
+                ]);
+            }
         }
 
         return $user;

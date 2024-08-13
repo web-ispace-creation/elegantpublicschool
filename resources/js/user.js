@@ -66,10 +66,10 @@ $('.add-row.job').on('click',function(){
     })
 })
 
-$('.signup form').on('submit',function(e){
+$('.signup #addProfile').on('submit',function(e){
     e.preventDefault()
     $.ajax({
-        url:'/store',
+        url:'/auth/store',
         type:'POST',
         data: new FormData(this),
         processData:false,
@@ -82,4 +82,24 @@ $('.signup form').on('submit',function(e){
             }
         }
     })
+})
+$('.user-page .edit-btn').on('click',function(){
+    $.ajax({
+        url:$(this).attr('data-url'),
+        type:'GET',
+        success:function(res){
+            console.log(res)
+        }
+    })
+})
+$('.rem-row.qualification').on('click', function(){
+    $.ajax({
+        url:'/remove-qualification',
+        type:'GET',
+        data:{'id':$(this).attr('data-id')},
+        success:function(res){
+            console.log(res)
+        }
+    })
+    // $(this).parent().parent().parent().remove()
 })

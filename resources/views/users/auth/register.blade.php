@@ -44,12 +44,11 @@
             </div>
             <div class="bg-white rounded p-4 mt-3">
                 <h3 class="text-el-blue mb-3">Signup</h3>
-                <form enctype="multipart/form-data">
+                <form enctype="multipart/form-data" id='addProfile'>
                     @csrf
                     <div class="row row-cols-1 row-cols-md-2">
-                      <div class="col mb-3">
-                        <input type="text" class="form-control mb-3" placeholder="First name" name="first_name">
-                        <input type="text" class="form-control" placeholder="Last name" name="last_name">
+                      <div class="col">
+                        <input type="text" class="form-control mb-3" placeholder="Enter full name" name="name">
                       </div>
                       <div class="col my-auto">
                         <input class="form-control mb-3" type="file" name='image'>
@@ -99,7 +98,7 @@
                     <h6 class="text-el-blue">Education</h6>
                     <hr>
                     <div class="edu-row-container">
-                        <div class="row row-cols-1 row-cols-md-4">
+                        {{-- <div class="row row-cols-1 row-cols-md-4">
                             <div class="col mb-1">
                                 <label class="text-el-blue">Course</label>
                                 <input type="text" class="form-control" name="course[]">
@@ -116,14 +115,14 @@
                                 <label class="text-el-blue">To</label>
                                 <input type="date" class="form-control" name="in_to[]">
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <p class="fs-small text-el-blue add-row edu" role="button"><i class="bi bi-plus-lg"></i> Add Row</p>
                     {{-- Professional Experience --}}
                     <h6 class="text-el-blue mt-4">Professional Experience</h6>
                     <hr>
                     <div class="job-row-container">
-                        <div class="row row-cols-1 row-cols-md-4">
+                        {{-- <div class="row row-cols-1 row-cols-md-4">
                             <div class="col mb-1">
                                 <label class="text-el-blue">Designation</label>
                                 <input type="text" class="form-control" name="designation[]">
@@ -140,7 +139,7 @@
                                 <label class="text-el-blue">To</label>
                                 <input type="date" class="form-control" name="comp_to[]">
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <p class="fs-small text-el-blue add-row job" role="button"><i class="bi bi-plus-lg"></i> Add Row</p>
                     {{-- password --}}

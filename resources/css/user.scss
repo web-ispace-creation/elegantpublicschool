@@ -89,15 +89,26 @@ $lite-gray: #f6f6f6 ;
   padding:130px 0 180px 0;
   position: absolute;
 }
-.alumni-filter select{
-  background-color: transparent;
-  margin-bottom: 40px;
-  outline: none;
+// .alumni-filter select{
+//   background-color: transparent;
+//   margin-bottom: 40px;
+//   outline: none;
+// }
+.alumni-filter .dropdown-menu{
+  max-height: 200px;
 }
 .alumni-students-section{
   position: relative;
   margin-top: 300px;
   padding:0 15%;
+  .page-link.active, .active > .page-link{
+    background-color: $el-blue;
+    border-color: $el-blue;
+    color: $lite-gray;
+  }
+  .page-link{
+    color: $el-blue;
+  }
 }
 @media(width <= 720px){
   .alumni-students-section{

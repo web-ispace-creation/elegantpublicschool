@@ -30,6 +30,11 @@
           <li class="nav-item">
             <a class="nav-link fw-600" href="#">Contact Us</a>
           </li>
+          @if(auth()->user())
+          <li class="nav-item">
+            <a class="nav-link fw-600" href="{{ route('user.logout') }}">Logout</a>
+          </li>
+          @endif
         </ul>
       </div>
     </div>

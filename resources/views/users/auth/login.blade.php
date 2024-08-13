@@ -40,6 +40,8 @@
                         <button type="submit" class="bg-el-blue border-0 rounded text-light w-100 py-2 mt-4">Login</button>
                     </form>
                 </div>
+                <div class="text-end"><a href="{{ route('user.register') }}" class="text-secondary small ">Create an account</a></div>
+                
             </div>
         </div>
     </div>

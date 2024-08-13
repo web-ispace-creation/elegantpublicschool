@@ -3,15 +3,12 @@
 use App\Http\Admin\Auth\AuthController;
 use App\Http\User\Auth\AuthController as userAuthController;
 use App\Http\Admin\Index\AdminIndexController;
-use App\Http\Alumni\AlumniController;
+use App\Http\User\Alumni\AlumniController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/user-profile', function () {
-    return view('users.userProfile');
-});
-// Route::get('/alumni-members', function () {
-//     return view('users.alumni');
+// Route::get('/user-profile', function () {
+//     return view('users.userProfile');
 // });
 
 // user
@@ -31,6 +28,9 @@ Route::prefix('')->group(function(){
     });
     Route::middleware(['auth','role:member'])->group(function(){
         Route::get('/',[AlumniController::class,'index'])->name('users.index');
+        Route::get('/profile/{id}',[AlumniController::class,'profile'])->name('users.profile');
+        Route::get('/edit-profile/{id}',[AlumniController::class,'editProfile'])->name('users.profile.edit');
+        Route::get('/remove-qualification',[AlumniController::class,'removeQualification'])->name('users.profile.qulaificatio.remove');
     });
 });
 
