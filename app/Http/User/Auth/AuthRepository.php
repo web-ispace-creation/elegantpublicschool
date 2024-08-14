@@ -3,6 +3,7 @@
 namespace App\Http\User\Auth;
 
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class AuthRepository
 {
@@ -37,7 +38,7 @@ class AuthRepository
             }
         }
         // Create Experiences
-        if($request->course !== null){
+        if($request->designation !== null){
             foreach ($request->designation as $index => $designation) {
                 $user->experience()->create([
                     'designation' => $designation,
@@ -55,6 +56,10 @@ class AuthRepository
     {
         return User::with('alumniDetails','qualifications','experience')->find($id);
     }
+    public function getDataWithEmail($email)
+    {
+        return User::with('alumniDetails','qualifications','experience')->where('email',$email)->first();
+    }
     public function addAppnNmbr($request){
         $user = User::where('id', $request->id)->first();
         if ($user) {
@@ -63,5 +68,10 @@ class AuthRepository
             $user->alumniDetails()->update(['application_no' => $request->application_no]);
         }
         return $user;
+    }
+    public function getToken($email)
+    {
+        return DB::table('password_reset_tokens')->where('email', $email)->first();
+
     }
 }

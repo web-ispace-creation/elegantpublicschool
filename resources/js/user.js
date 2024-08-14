@@ -98,8 +98,43 @@ $('.rem-row.qualification').on('click', function(){
         type:'GET',
         data:{'id':$(this).attr('data-id')},
         success:function(res){
-            console.log(res)
+            res.status == 200 && location.reload();
         }
     })
-    // $(this).parent().parent().parent().remove()
+})
+$('.rem-row.experience').on('click', function(){
+    $.ajax({
+        url:'/remove-experience',
+        type:'GET',
+        data:{'id':$(this).attr('data-id')},
+        success:function(res){
+            res.status == 200 && location.reload();
+        }
+    })
+})
+$('.signup #editProfile').on('submit',function(e){
+    e.preventDefault()
+    $.ajax({
+        url:$(this).attr('action'),
+        type:'POST',
+        data: new FormData(this),
+        processData:false,
+        contentType:false,
+        success:function(res){
+         res.status == 200 && location.reload();
+        }
+    })
+})
+$('#forgotPwdModal form').on('submit',function(e){
+    e.preventDefault()
+    $.ajax({
+        url:$(this).attr('action'),
+        type:'POST',
+        data: new FormData(this),
+        processData:false,
+        contentType:false,
+        success:function(res){
+            alert(res.msg)
+        }
+    })
 })

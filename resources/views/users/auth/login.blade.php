@@ -36,7 +36,7 @@
                                 </ul>
                             </div>
                         @endif
-                        <small class="">Forget password?</small>
+                        <small class="" role="button" id='forgotPassword' data-bs-toggle="modal" data-bs-target="#forgotPwdModal">Forget password?</small>
                         <button type="submit" class="bg-el-blue border-0 rounded text-light w-100 py-2 mt-4">Login</button>
                     </form>
                 </div>
@@ -46,5 +46,27 @@
         </div>
     </div>
 </div>
-    
+    {{-- forgot password --}}
+        
+        <!-- Modal -->
+        <div class="modal fade" id="forgotPwdModal" tabindex="-1"  aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Reset Password</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="{{ route('user.password.forgot') }}">
+                        @csrf
+                        <div class="modal-body">
+                            <input type="email" class="form-control shadow-none"  placeholder="Enter your email" name='email'>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn bg-el-blue text-light">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 @endsection

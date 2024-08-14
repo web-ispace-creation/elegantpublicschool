@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use App\Notifications\AdminPasswordNotification;
+use App\Notifications\UserPasswordResetMail;
+use Illuminate\Auth\Passwords\TokenRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
@@ -60,13 +62,18 @@ class AuthService
                 }
         }
     }
-    public function sendPasswordResetLink($id)
+    public function sendPasswordResetLink($email)
     {
-        $user = $this->repository->getDataWithId($id);
-        $status = Password::sendResetLink(
-            $user->only('email')
-        );
-        return $status === Password::RESET_LINK_SENT ? redirect()->route('user.index') : redirect()->back();
+        $user = $this->repository->getDataWithEmail($email);
+        if($user){
+            $token = app('auth.password.broker')->createToken($user);
+            if ($this->sendResetEmail($email, $token)) {
+                return ['status'=>200,'msg'=>'Mail has been sent!'];
+            }
+        }else{
+            return ['msg'=>"Email doesn't seem to exist",'status'=>502];
+        }
+        
     }
     public function passwordUpdate($request)
     {
@@ -88,7 +95,7 @@ class AuthService
         );
      
         return $status === Password::PASSWORD_RESET
-                    ? redirect()->route('admin.login')->with('status', __($status))
+                    ? redirect()->route('user.login')->with('status', __($status))
                     : back()->withErrors(['email' => [__($status)]]);
     }
     public function authenticate($request)
@@ -135,6 +142,12 @@ class AuthService
         $otp = 789456;
         Session::put('adminAuthOtp', $otp);
         // Notification::route('mail', $email)->notify(new AdminLogInOTP($otp,$email));
+        return 200;
+    }
+    private function sendResetEmail($email, $token)
+    {
+        $link = config('app.url') . 'auth/reset-password/' . $token . '?email=' . urlencode($email);
+        Notification::route('mail', $email)->notify(new UserPasswordResetMail($link,$email));
         return 200;
     }
 }

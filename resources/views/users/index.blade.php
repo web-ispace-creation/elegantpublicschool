@@ -8,7 +8,7 @@
 <div class="alumni-students-section mb-5">
     <div class="alumni-filter text-end">
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle bg-el-blue text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle bg-el-blue text-light mb-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               {{request()->batch == '' ? 'Year' : request()->batch}}
             </button>
             <ul class="dropdown-menu overflow-auto">

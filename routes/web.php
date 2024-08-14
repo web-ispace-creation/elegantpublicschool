@@ -17,7 +17,7 @@ Route::prefix('')->group(function(){
     Route::prefix('auth')->group(function(){
         Route::get('/register', [userAuthController::class, 'viewRegister'])->name('user.register');
         Route::any('/store', [userAuthController::class, 'register'])->name('user.store');
-        // Route::get('/verify/bycreator/{user_id}', [userAuthController::class, 'verifyByCreator'])->name('user.verify.bycreator');
+        Route::post('/forgot-password', [userAuthController::class, 'forgotPassword'])->name('user.password.forgot');
         Route::any('/reset-password/{token}', [userAuthController::class, 'passwordReset'])->name('user.password.reset');
         Route::any('/update-password', [userAuthController::class, 'passwordUpdate'])->name('user.password.update');
         Route::any('/login', [userAuthController::class, 'login'])->name('user.login');
@@ -30,7 +30,9 @@ Route::prefix('')->group(function(){
         Route::get('/',[AlumniController::class,'index'])->name('users.index');
         Route::get('/profile/{id}',[AlumniController::class,'profile'])->name('users.profile');
         Route::get('/edit-profile/{id}',[AlumniController::class,'editProfile'])->name('users.profile.edit');
-        Route::get('/remove-qualification',[AlumniController::class,'removeQualification'])->name('users.profile.qulaificatio.remove');
+        Route::get('/remove-qualification',[AlumniController::class,'removeQualification'])->name('users.profile.qualification.remove');
+        Route::get('/remove-experience',[AlumniController::class,'removeExperience'])->name('users.profile.exp.remove');
+        Route::post('/profile-update',[AlumniController::class,'updateProfile'])->name('user.profile.update');
     });
 });
 

@@ -29,7 +29,31 @@ class AlumniController extends Controller
     }
     public function removeQualification(Request $request)
     {
-        dd($request->id);
+        try {
+            $res = $this->service->removeQualification($request->id);
+            return response()->json($res);
+        } catch (\Throwable $th) {
+            return response()->json(['status'=>500,'msg'=>'Sorry, something went wrong!']);
+        }
+    }
+    public function removeExperience(Request $request)
+    {
+        try {
+            $res = $this->service->removeExperience($request->id);
+            return response()->json($res);
+        } catch (\Throwable $th) {
+            return response()->json(['status'=>500,'msg'=>'Sorry, something went wrong!']);
+        }
+    }
+    public function updateProfile(Request $request)
+    {
+        try {
+            $res = $this->service->updateProfile($request);
+            return response()->json($res);
+        } catch (\Throwable $th) {
+            dd($th);
+            return response()->json(['status'=>500,'msg'=>'Sorry, something went wrong!']);
+        }
     }
 } 
 

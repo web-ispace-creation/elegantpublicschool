@@ -46,14 +46,15 @@ class AuthController extends Controller
     {
         return $this->service->passwordUpdate($request);
     }
-    // public function verifyByCreator(Request $request)
-    // {
-    //     try {
-    //         $this->service->sendPasswordResetLink($request->route('user_id'));
-    //     } catch (\Throwable $th) {
-    //         return response()->json(['msg'=>'Sorry something went wrong']);
-    //     }
-    // }
+    public function forgotPassword(Request $request)
+    {
+        try {
+            $res = $this->service->sendPasswordResetLink($request->email);
+            return response()->json($res);
+        } catch (\Throwable $th) {
+            return response()->json(['msg'=>'Sorry something went wrong','status'=>500]);
+        }
+    }
     public function authenticate(Request $request)
     {
         try {

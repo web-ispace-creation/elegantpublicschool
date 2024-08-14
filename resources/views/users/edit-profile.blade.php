@@ -4,10 +4,10 @@
         <div class="container">
             <div class="bg-white rounded p-4 mt-3">
                 <h3 class="text-el-blue mb-3">Edit Profile</h3>
-                <form enctype="multipart/form-data" id="editProfile">
+                <form enctype="multipart/form-data" id="editProfile" action="{{route('user.profile.update')}}">
                     @csrf
                     <div class="row row-cols-1 row-cols-md-2">
-                        <input type="hidden" name="data_id" value="{{$data->id}}">
+                        <input type="hidden" name="id" value="{{$data->id}}">
                       <div class="col">
                         <label class="text-el-blue">Name</label>
                         <input type="text" class="form-control mb-3" value="{{$data->name}}" name="name">
@@ -81,6 +81,7 @@
                                         <div class="d-flex align-items-center">
                                             <input type="date" class="form-control" name="in_to[]" value="{{$item->to}}">
                                             <i class="bi bi-x-circle ms-1 text-danger rem-row qualification" role='button' data-id={{$item->id}}></i>
+                                            <input type="hidden" name="qualification_id[]" value="{{$item->id}}">
                                         </div>
                                     </div>
                                 </div>
@@ -112,6 +113,7 @@
                                         <div class="d-flex align-items-center">
                                             <input type="date" class="form-control" name="comp_to[]" value="{{$item->to}}">
                                             <i class="bi bi-x-circle ms-1 text-danger rem-row experience" role='button' data-id={{$item->id}}></i>
+                                            <input type="hidden" name="experience_id[]" value="{{$item->id}}">
                                         </div>
                                     </div>
                                 </div>
