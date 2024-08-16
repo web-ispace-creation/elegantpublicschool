@@ -7,28 +7,28 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link fw-600 " aria-current="page" href="#">Home</a>
+            <a class="nav-link fw-600 " aria-current="page" href="https://theelegantpublicschool.com/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-600" href="#">About</a>
+            <a class="nav-link fw-600" href="https://theelegantpublicschool.com/about-us/">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-600" href="#">Facilities</a>
+            <a class="nav-link fw-600" href="https://theelegantpublicschool.com/facilities/">Facilities</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-600" href="#">Admissions</a>
+            <a class="nav-link fw-600" href="https://theelegantpublicschool.com/download-tc/">Admissions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-600" href="#">Curriculum</a>
+            <a class="nav-link fw-600" href="https://theelegantpublicschool.com/curriculum/">Curriculum</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-600" href="#">Mandatory Public Disclosure</a>
+            <a class="nav-link fw-600" href="https://theelegantpublicschool.com/mandatory-public-disclosure/">Mandatory Public Disclosure</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-600" href="#">Faculty</a>
+            <a class="nav-link fw-600" href="https://theelegantpublicschool.com/faculty/">Faculty</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-600" href="#">Contact Us</a>
+            <a class="nav-link fw-600" href="https://theelegantpublicschool.com/contact-us/">Contact Us</a>
           </li>
           @if(auth()->user())
           <li class="nav-item">

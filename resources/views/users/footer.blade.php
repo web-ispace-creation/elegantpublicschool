@@ -14,25 +14,25 @@
             <div class="col-6 col-md-3 mb-3 text-center text-md-start">
               <h5 class="text-light fw-normal">Quick Links</h5>
               <ul class="nav flex-column mt-3">
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal">Home</a></li></small>
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal">About</a></li></small>
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal">Mission and Vision</a></li></small>
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal">Annual Report</a></li></small>
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal">SMC</a></li></small>
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal">Message</a></li></small>
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal">Fees Structure</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/" class="nav-link p-0 text-light fw-normal">Home</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/about-us/" class="nav-link p-0 text-light fw-normal">About</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/facilities/" class="nav-link p-0 text-light fw-normal">Mission and Vision</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/facilities/" class="nav-link p-0 text-light fw-normal">Annual Report</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/smc/" class="nav-link p-0 text-light fw-normal">SMC</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/message/" class="nav-link p-0 text-light fw-normal">Message</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/wp-content/uploads/2023/06/Fee-Structure.pdf" class="nav-link p-0 text-light fw-normal">Fees Structure</a></li></small>
               </ul>
             </div>
             <div class="col-6 col-md-2 mb-3 text-center text-md-start">
               <h5 class="text-light fw-normal">Info</h5>
               <ul class="nav flex-column mt-3">
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal small">Download TC</a></li></small>
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal small">Curriculum</a></li></small>
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal small">Faculty</a></li></small>
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal small">Students</a></li></small>
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal small">Gallery</a></li></small>
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal small">News</a></li></small>
-                <small><li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-normal small">Contact Us</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/download-tc/" class="nav-link p-0 text-light fw-normal small">Download TC</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/curriculum/" class="nav-link p-0 text-light fw-normal small">Curriculum</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/faculty/" class="nav-link p-0 text-light fw-normal small">Faculty</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/students/" class="nav-link p-0 text-light fw-normal small">Students</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/gallery/" class="nav-link p-0 text-light fw-normal small">Gallery</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/news/" class="nav-link p-0 text-light fw-normal small">News</a></li></small>
+                <small><li class="nav-item mb-2"><a href="https://theelegantpublicschool.com/contact-us/" class="nav-link p-0 text-light fw-normal small">Contact Us</a></li></small>
               </ul>
             </div>
             <div class="col-12 col-md-4 mb-3 text-center text-md-start">

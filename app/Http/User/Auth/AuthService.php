@@ -138,10 +138,9 @@ class AuthService
     }
     public function sendMail($email)
     {
-        // $otp = rand(100000, 999999);
-        $otp = 789456;
+        $otp = rand(100000, 999999);
         Session::put('adminAuthOtp', $otp);
-        // Notification::route('mail', $email)->notify(new AdminLogInOTP($otp,$email));
+        Notification::route('mail', $email)->notify(new AdminLogInOTP($otp,$email));
         return 200;
     }
     private function sendResetEmail($email, $token)
