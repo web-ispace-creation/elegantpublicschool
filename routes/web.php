@@ -3,6 +3,7 @@
 use App\Http\Admin\Auth\AuthController;
 use App\Http\User\Auth\AuthController as userAuthController;
 use App\Http\Admin\Index\AdminIndexController;
+use App\Http\Admin\AlumniCouncil\AlumniCouncilController;
 use App\Http\User\Alumni\AlumniController;
 use Illuminate\Support\Facades\Route;
 
@@ -56,5 +57,8 @@ Route::prefix('admin')->group(function(){
         Route::get('/get-alumni-datatable',[AdminIndexController::class,'getDataTable'])->name('admin.get.alumni.datatable');
         Route::get('/get-alumni-member-data',[AdminIndexController::class,'getAlumniDataWithId'])->name('admin.get.alumni.member.data');
         Route::post('/approve-member',[AdminIndexController::class,'approveMember'])->name('admin.approve.alumni.member');
+        // alumni council
+        Route::get('/alumni-council',[AlumniCouncilController::class,'index'])->name('admin.alumni-council.index');
+        Route::get('/get-alumni-council-datatable',[AlumniCouncilController::class,'getDataTable'])->name('admin.get.alumni.council.datatable');
     });
 });
