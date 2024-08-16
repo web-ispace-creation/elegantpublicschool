@@ -13,10 +13,11 @@
         <span class="bi bi-border-all"></span>
         <span class="ms-2">Dashboard</span>
       </a>
-      <!-- {{-- <a  class="list-group-item list-group-item-action list-group-item-dark border-0 align-items-center {{ Route::is('superadmin.heroslider') ? 'active' : '' }}"   href="{{Route('superadmin.heroslider')}}"  aria-controls="hero">
-        <span class="bi bi-box"></span>
-        <span class="ms-2">Hero slider</span>
-      </a> --}} -->
+
+      <a  class="list-group-item list-group-item-action list-group-item-dark border-0 align-items-center {{ Route::is('admin.alumni-council.index') ? 'active' : '' }}"   href="{{Route('admin.alumni-council.index')}}"  aria-controls="hero">
+        <span class="bi bi-people-fill"></span>
+        <span class="ms-2">Alumni Council</span>
+      </a>
       
 
       {{-- <button class="list-group-item list-group-item-action list-group-item-dark border-0 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#slider-collapse">

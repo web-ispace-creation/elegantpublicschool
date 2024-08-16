@@ -58,10 +58,10 @@ $(function () {
        ajax: routeUrl,
        columns: [
            {data: 'id', name: 'id'},
+           {data: 'image', name: 'image'},
            {data: 'name', name: 'name'},
          //   {data: 'last_name', name: 'alumniDetails.last_name'},
            {data: 'email', name: 'email'},
-           {data: 'image', name: 'image'},
            {data: 'alumni_details.phone', name: 'phone'},
            {data: 'alumni_details.batch', name: 'batch'},
            {data: 'alumni_details.from', name: 'from'},
@@ -74,8 +74,8 @@ $(function () {
 });
 
     $(document).on('click', '.dashboard .edit-btn', function() {
-    var routeUrl = $(this).data('url');
-    var itemId = $(this).data('id');
+        var routeUrl = $(this).data('url');
+        var itemId = $(this).data('id');
         $.ajax({
             url: routeUrl,
             type: 'get',
@@ -84,14 +84,16 @@ $(function () {
                 $("#adminVerifyStudentModal input[name='name']").val(response.name);
                 $("#adminVerifyStudentModal input[name='email']").val(response.email);
                 $("#adminVerifyStudentModal input[name='id']").val(response.id);
-                $("#adminVerifyStudentModal input[name='phone']").val(response.alumni_details.phone);
-                $("#adminVerifyStudentModal input[name='batch']").val(response.alumni_details.batch);
-                $("#adminVerifyStudentModal input[name='from']").val(response.alumni_details.from);
-                $("#adminVerifyStudentModal input[name='to']").val(response.alumni_details.to);
-                $("#adminVerifyStudentModal input[name='application_no']").val(response.alumni_details.application_no);
-                $("#adminVerifyStudentModal img").attr('src',`/storage/images/profile/${response.alumni_details.image}`);
-                    var myModal = new bootstrap.Modal(document.getElementById('adminVerifyStudentModal'));
-                    myModal.show();
+                if (response.alumni_details) {
+                    $("#adminVerifyStudentModal input[name='phone']").val(response.alumni_details.phone || '');
+                    $("#adminVerifyStudentModal input[name='batch']").val(response.alumni_details.batch || '');
+                    $("#adminVerifyStudentModal input[name='from']").val(response.alumni_details.from || '');
+                    $("#adminVerifyStudentModal input[name='to']").val(response.alumni_details.to || '');
+                    $("#adminVerifyStudentModal input[name='application_no']").val(response.alumni_details.application_no || '');
+                    $("#adminVerifyStudentModal img").attr('src', `/storage/images/profile/${response.alumni_details.image || ''}`);
+                }
+                var myModal = new bootstrap.Modal(document.getElementById('adminVerifyStudentModal'));
+                myModal.toggle();
 
             },
             error: function(xhr, status, error){
@@ -122,3 +124,27 @@ $(function () {
             },
         });
     });
+
+
+    // alumni council
+
+    $(function () {
+        var routeUrl = $('.dashboard .datatable').data('url');
+        var table = $('.dashboard .datatable').DataTable({
+            processing: true,
+            serverSide: true,
+            type:'POST',
+            ajax: routeUrl,
+            columns: [
+                {data: 'id', name: 'id'},
+                {data: 'image', name: 'image'},
+                {data: 'name', name: 'name'},
+                {data: 'position', name: 'position'},
+                {data: 'email', name: 'email'},
+                {data: 'phone', name: 'phone'},
+                {data: 'batch', name: 'batch'},
+                {data: 'application_no', name: 'application_no'},
+                {data: 'action', name: 'action', orderable: false, searchable: false},
+            ],
+        });
+     });
