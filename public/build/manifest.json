@@ -1,0 +1,65 @@
+{
+  "_bootstrap.esm-BPoW-0lx.js": {
+    "file": "assets/bootstrap.esm-BPoW-0lx.js",
+    "name": "bootstrap.esm"
+  },
+  "_jquery-Da2SryCc.js": {
+    "file": "assets/jquery-Da2SryCc.js",
+    "name": "jquery"
+  },
+  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff": {
+    "file": "assets/bootstrap-icons-BOrJxbIo.woff",
+    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff"
+  },
+  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2": {
+    "file": "assets/bootstrap-icons-BtvjY1KL.woff2",
+    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
+  },
+  "resources/css/admin.scss": {
+    "file": "assets/admin-D8_cdN1z.css",
+    "src": "resources/js/admin.js"
+  },
+  "resources/css/app.scss": {
+    "file": "assets/app-CcJvouV3.css",
+    "src": "resources/css/app.scss",
+    "isEntry": true
+  },
+  "resources/css/user.scss": {
+    "file": "assets/user-DA-cHCM0.css",
+    "src": "resources/css/user.scss",
+    "isEntry": true
+  },
+  "resources/js/admin.js": {
+    "file": "assets/admin-Bb3KuaA1.js",
+    "name": "admin",
+    "src": "resources/js/admin.js",
+    "isEntry": true,
+    "imports": [
+      "_jquery-Da2SryCc.js",
+      "_bootstrap.esm-BPoW-0lx.js"
+    ],
+    "css": [
+      "assets/admin-D8_cdN1z.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-D54Favus.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_bootstrap.esm-BPoW-0lx.js"
+    ]
+  },
+  "resources/js/user.js": {
+    "file": "assets/user-ChHzZ2mL.js",
+    "name": "user",
+    "src": "resources/js/user.js",
+    "isEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_jquery-Da2SryCc.js",
+      "_bootstrap.esm-BPoW-0lx.js"
+    ]
+  }
+}
