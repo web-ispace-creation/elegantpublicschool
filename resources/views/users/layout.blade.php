@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
+        <title>Alumni | Elegant Public CBSE School Palakkad, Kerala</title>
+        <link rel="icon" type="image/x-icon" href="https://theelegantpublicschool.com/wp-content/uploads/2021/07/Elegant-School-Icon-01.png">
         @vite(['resources/css/user.scss','resources/js/user.js'])
         
     </head>
