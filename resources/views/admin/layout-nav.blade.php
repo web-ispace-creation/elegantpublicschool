@@ -9,7 +9,7 @@
     <h1 class="bi bi-bootstrap text-primary d-flex my-4 justify-content-center"></h1>
     <div class="list-group rounded-0 bg-dark">
       <a  class="list-group-item list-group-item-
-        list-group-item-dark border-0 d-flex align-items-center"   href=""  aria-controls="home">
+        list-group-item-dark border-0 d-flex align-items-center {{ Route::is('admin.index') ? 'active' : '' }}"   href="{{Route('admin.index')}}"  aria-controls="home">
         <span class="bi bi-border-all"></span>
         <span class="ms-2">Dashboard</span>
       </a>

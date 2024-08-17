@@ -31,6 +31,7 @@
                 </div>
                 <div class="card-body text-secondary">
                     <h6 class="card-title">{{ $item->name }}</h6>
+                    {{-- <span class="">{{ $item->alumniCouncil->designation }}</span> --}}
                     <div class="card-text d-flex flex-wrap justify-content-between align-items-center small">
                         <span>Batch : {{ $item->alumniDetails->batch }}</span>
                         <span>From : {{ $item->alumniDetails->from }}</span> 

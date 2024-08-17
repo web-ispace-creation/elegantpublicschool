@@ -8,7 +8,7 @@ use App\Models\User;
 class AlumniRepository{
     public function getAllDataWithAlumniDetailsWithPaginate($filter)
     {
-        $query = User::where('role', 'member');
+        $query = User::where('role', 'member')->with('alumniCouncil');
         if (!empty($filter['batch'])) {
             $query->whereHas('alumniDetails', function ($query) use ($filter) {
                 $query->where('batch', $filter['batch']);
