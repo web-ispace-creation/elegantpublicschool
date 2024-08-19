@@ -1,4 +1,4 @@
-import{a as o}from"./app-D54Favus.js";import{$ as t}from"./jquery-Da2SryCc.js";import"./bootstrap.esm-BPoW-0lx.js";window.axios=o;window.axios.defaults.headers.common["X-Requested-With"]="XMLHttpRequest";t(".add-row.edu").on("click",function(){t(".edu-row-container").append(`<div class="row row-cols-1 row-cols-md-4">
+import{a as o}from"./app-D54Favus.js";import{$ as t}from"./jquery-BqZ9aMUF.js";import"./bootstrap.esm-BPoW-0lx.js";window.axios=o;window.axios.defaults.headers.common["X-Requested-With"]="XMLHttpRequest";t(".add-row.edu").on("click",function(){t(".edu-row-container").append(`<div class="row row-cols-1 row-cols-md-4">
                             <div class="col mb-1">
                                 <label class="text-el-blue">Course</label>
                                 <input type="text" class="form-control" name="course[]">
