@@ -74,6 +74,7 @@ $(function () {
     $(document).on('click', '.dashboard .edit-btn', function() {
         var routeUrl = $(this).data('url');
         var itemId = $(this).data('id');
+
         $.ajax({
             url: routeUrl,
             type: 'get',
@@ -91,7 +92,7 @@ $(function () {
                     $("#adminVerifyStudentModal img").attr('src', `/storage/images/profile/${response.alumni_details.image || ''}`);
                 }
                 // var myModal = new bootstrap.Modal(document.getElementById('adminVerifyStudentModal'));
-                $('#adminVerifyStudentModal').toggle();
+                $('#adminVerifyStudentModal').modal('toggle')
 
             },
             error: function(xhr, status, error){
@@ -114,7 +115,7 @@ $(function () {
                 if(response.status == 200){
                     alert(response.msg);
                     // var myModal = bootstrap.Modal.getInstance(document.getElementById('adminVerifyStudentModal'));
-                    $('#adminVerifyStudentModal').toggle();
+                    $('#adminVerifyStudentModal').modal('toggle')
                     $('.dashboard .datatable').DataTable().ajax.reload();
                 }else{
                     alert(response.message);
@@ -167,7 +168,7 @@ $(function () {
               if(response.status == 200){
                   alert(response.msg);
                 //   var myModal = bootstrap.Modal.getInstance(document.getElementById('adminAddAlumniMembersModal'));
-                  $('#adminAddAlumniMembersModal').toggle();
+                  $('#adminAddAlumniMembersModal').modal('toggle')
                   $('.alumniCouncil .datatable').DataTable().ajax.reload();
               }else{
                   alert(response.msg);
