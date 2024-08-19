@@ -59,6 +59,8 @@ Route::prefix('admin')->group(function(){
         Route::post('/approve-member',[AdminIndexController::class,'approveMember'])->name('admin.approve.alumni.member');
         // alumni council
         Route::get('/alumni-council',[AlumniCouncilController::class,'index'])->name('admin.alumni-council.index');
+        Route::get('/select-alumni-member',[AlumniCouncilController::class,'selectMember'])->name('admin.select-alumni-member');
+        Route::post('/add-alumni-council',[AlumniCouncilController::class,'addCouncil'])->name('admin.add-alumni-council');
         Route::get('/get-alumni-council-datatable',[AlumniCouncilController::class,'getDataTable'])->name('admin.get.alumni.council.datatable');
     });
 });

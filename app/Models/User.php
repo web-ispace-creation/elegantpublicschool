@@ -44,6 +44,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function alumniCouncil(){
+        return $this->hasOne(AlumniCouncil::class,'alumni_id','id');
+    }
     public function alumniDetails(){
         return $this->hasOne(AlumniDetail::class);
     }
