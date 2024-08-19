@@ -1,18 +1,16 @@
 
-
+import './bootstrap';
 import '../css/admin.scss'; 
 import $ from 'jquery';
 import DataTable from 'datatables.net-bs5';
 window.DataTable = DataTable;
+import axios from 'axios';
+window.axios = axios;
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // import select2 from 'select2';
 // select2();
-window.jQuery = $;
-window.$ = $;
-
-import 'select2'; // Modifies the global jQuery object.
-
-$('select').select2();
-import * as bootstrap from 'bootstrap'
+// import 'select2';
+// import * as bootstrap from 'bootstrap's
 
 $(document).ready(()=>{
 
@@ -93,7 +91,7 @@ $(function () {
                     $("#adminVerifyStudentModal img").attr('src', `/storage/images/profile/${response.alumni_details.image || ''}`);
                 }
                 var myModal = new bootstrap.Modal(document.getElementById('adminVerifyStudentModal'));
-                myModal.toggle();
+                $('#adminVerifyStudentModal').toggle();
 
             },
             error: function(xhr, status, error){
@@ -115,8 +113,8 @@ $(function () {
             success: function(response){
                 if(response.status == 200){
                     alert(response.msg);
-                    var myModal = bootstrap.Modal.getInstance(document.getElementById('adminVerifyStudentModal'));
-                    myModal.hide();
+                    // var myModal = bootstrap.Modal.getInstance(document.getElementById('adminVerifyStudentModal'));
+                    $('#adminVerifyStudentModal').hide();
                     $('.dashboard .datatable').DataTable().ajax.reload();
                 }else{
                     alert(response.message);
@@ -129,30 +127,31 @@ $(function () {
     // alumni council
 
     // search members
-    $(document).ready(function() {
-      var selectedItems;
-      $('#selectContainer .searchable-dropdown').select2({
-        placeholder: "Select alumni member",
-        allowClear: true,
-        dropdownParent: $('.alumni-council-member-select'),
-        ajax: {
-          url: $('#selectContainer').data('search'),
-          dataType: 'json',
-          data: function (params) {
-              return {
-                  search: params.term,
-                  type: 'public'
-              };
-          },
-          processResults: function (data) {
-              selectedItems = data.data;
-              return {
-                  results: selectedItems
-              };
-          },
-        }
-      });
-    });
+    // $(document).ready(function() {
+    //   var selectedItems;
+
+    //   $('#selectContainer .searchable-dropdown').select2({
+    //     placeholder: "Select alumni member",
+    //     allowClear: true,
+    //     dropdownParent: $('.alumni-council-member-select'),
+    //     ajax: {
+    //       url: $('#selectContainer').data('search'),
+    //       dataType: 'json',
+    //       data: function (params) {
+    //           return {
+    //               search: params.term,
+    //               type: 'public'
+    //           };
+    //       },
+    //       processResults: function (data) {
+    //           selectedItems = data.data;
+    //           return {
+    //               results: selectedItems
+    //           };
+    //       },
+    //     }
+    //   });
+    // });
 
     // add alumni council members
     $("#adminAddAlumniMembersModal form").submit(function(e){
@@ -167,8 +166,8 @@ $(function () {
           success: function(response){
               if(response.status == 200){
                   alert(response.msg);
-                  var myModal = bootstrap.Modal.getInstance(document.getElementById('adminAddAlumniMembersModal'));
-                  myModal.hide();
+                //   var myModal = bootstrap.Modal.getInstance(document.getElementById('adminAddAlumniMembersModal'));
+                  $('#adminAddAlumniMembersModal').hide();
                   $('.alumniCouncil .datatable').DataTable().ajax.reload();
               }else{
                   alert(response.msg);

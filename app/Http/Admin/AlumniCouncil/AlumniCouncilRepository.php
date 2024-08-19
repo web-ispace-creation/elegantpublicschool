@@ -11,9 +11,9 @@ class AlumniCouncilRepository{
     // }
     public function getData($searchTerm = null){
         $query = User::query()->where('role','member')->with('alumniDetails');
-        // if ($searchTerm) {
-        //     $query->where('product_type', 'LIKE', '%' . $searchTerm . '%');
-        // }
+        if ($searchTerm) {
+            $query->where('name', 'LIKE', '%' . $searchTerm . '%');
+        }
         return $query->get();
     }
     public function storeCouncilMembers($request){
