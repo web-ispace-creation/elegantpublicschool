@@ -114,7 +114,7 @@ $(function () {
                 if(response.status == 200){
                     alert(response.msg);
                     // var myModal = bootstrap.Modal.getInstance(document.getElementById('adminVerifyStudentModal'));
-                    $('#adminVerifyStudentModal').hide();
+                    $('#adminVerifyStudentModal').toggle();
                     $('.dashboard .datatable').DataTable().ajax.reload();
                 }else{
                     alert(response.message);
@@ -167,7 +167,7 @@ $(function () {
               if(response.status == 200){
                   alert(response.msg);
                 //   var myModal = bootstrap.Modal.getInstance(document.getElementById('adminAddAlumniMembersModal'));
-                  $('#adminAddAlumniMembersModal').hide();
+                  $('#adminAddAlumniMembersModal').toggle();
                   $('.alumniCouncil .datatable').DataTable().ajax.reload();
               }else{
                   alert(response.msg);
