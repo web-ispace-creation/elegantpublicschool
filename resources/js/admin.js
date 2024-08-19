@@ -10,7 +10,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // import select2 from 'select2';
 // select2();
 // import 'select2';
-// import * as bootstrap from 'bootstrap's
+// import * as bootstrap from 'bootstrap'
 
 $(document).ready(()=>{
 
@@ -90,7 +90,7 @@ $(function () {
                     $("#adminVerifyStudentModal input[name='application_no']").val(response.alumni_details.application_no || '');
                     $("#adminVerifyStudentModal img").attr('src', `/storage/images/profile/${response.alumni_details.image || ''}`);
                 }
-                var myModal = new bootstrap.Modal(document.getElementById('adminVerifyStudentModal'));
+                // var myModal = new bootstrap.Modal(document.getElementById('adminVerifyStudentModal'));
                 $('#adminVerifyStudentModal').toggle();
 
             },
