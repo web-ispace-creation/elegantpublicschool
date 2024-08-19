@@ -6,7 +6,12 @@ import DataTable from 'datatables.net-bs5';
 window.DataTable = DataTable;
 // import select2 from 'select2';
 // select2();
-import 'select2';
+window.jQuery = $;
+window.$ = $;
+
+import 'select2'; // Modifies the global jQuery object.
+
+$('select').select2();
 import * as bootstrap from 'bootstrap'
 
 $(document).ready(()=>{

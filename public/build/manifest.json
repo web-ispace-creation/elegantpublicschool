@@ -3,8 +3,8 @@
     "file": "assets/bootstrap.esm-BPoW-0lx.js",
     "name": "bootstrap.esm"
   },
-  "_jquery-BqZ9aMUF.js": {
-    "file": "assets/jquery-BqZ9aMUF.js",
+  "_jquery-DmpTcb4B.js": {
+    "file": "assets/jquery-DmpTcb4B.js",
     "name": "jquery"
   },
   "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff": {
@@ -30,12 +30,12 @@
     "isEntry": true
   },
   "resources/js/admin.js": {
-    "file": "assets/admin-DBANPK6R.js",
+    "file": "assets/admin-CSWC1NE4.js",
     "name": "admin",
     "src": "resources/js/admin.js",
     "isEntry": true,
     "imports": [
-      "_jquery-BqZ9aMUF.js",
+      "_jquery-DmpTcb4B.js",
       "_bootstrap.esm-BPoW-0lx.js"
     ],
     "css": [
@@ -52,13 +52,13 @@
     ]
   },
   "resources/js/user.js": {
-    "file": "assets/user-B8yHEnCw.js",
+    "file": "assets/user-DY-zJLSh.js",
     "name": "user",
     "src": "resources/js/user.js",
     "isEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_jquery-BqZ9aMUF.js",
+      "_jquery-DmpTcb4B.js",
       "_bootstrap.esm-BPoW-0lx.js"
     ]
   }
