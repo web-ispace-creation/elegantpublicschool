@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\User\Alumni;
 
+use App\Http\Admin\AlumniCouncil\AlumniCouncilRepository;
 use App\Http\User\Alumni\AlumniRepository;
 use App\Http\User\Auth\AuthRepository;
 use Illuminate\Support\Facades\Log;
@@ -8,14 +9,21 @@ use Illuminate\Support\Facades\Validator;
 
 class AlumniService
 {
-    protected $repository;
-    public function __construct(AlumniRepository $repository)
+    protected $repository,$alumniCouncilRepository;
+    public function __construct(AlumniRepository $repository, AlumniCouncilRepository $alumniCouncilRepository)
     {
         $this->repository = $repository;
+        $this->alumniCouncilRepository = $alumniCouncilRepository;
     }
-    public function getAllDataWithAlumniDetailsWithPaginate($filter)
+    public function getAllDataWithAlumniDetailsWithPaginate($request)
     {
-        return $this->repository->getAllDataWithAlumniDetailsWithPaginate($filter);
+        $request->batch !== null ? $filter['batch'] = $request->batch : $filter['batch']=null;
+        if(auth()->user()->role == 'member'){
+            $profile = $this->getProfileWithId(auth()->user()->id);
+            $filter['batch'] = $profile->alumniDetails->batch;
+        }
+        $res =  $this->repository->getAllDataWithAlumniDetailsWithPaginate($filter);
+        return $res;
     }
     public function getProfileWithId($id)
     {
@@ -128,6 +136,10 @@ class AlumniService
                 }
                 return ['msg'=>'Successfully Stored','status'=>200];
         }
+    }
+    public function getCouncilMembers()
+    {
+        return $this->alumniCouncilRepository->getCouncilMembers();
     }
 } 
 

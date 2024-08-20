@@ -6,7 +6,7 @@
 </div>
 {{-- {{dd(request()->batch)}} --}}
 <div class="alumni-students-section mb-5">
-    <div class="alumni-filter text-end">
+    <div class="alumni-filter text-end {{auth()->user()->role=='member'? 'd-none':''}}">
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle bg-el-blue text-light mb-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               {{request()->batch == '' ? 'Year' : request()->batch}}
@@ -49,7 +49,7 @@
     
     <div class="text-end">
         <div class="">
-            <button type="submit" class="border-0 bg-el-blue text-white small rounded py-2 px-4">Alumni Council</button>
+            <a href="{{route('user.alumnicouncil.show')}}"  class="border-0 bg-el-blue text-white small rounded py-2 px-4 text-decoration-none">Alumni Council</a>
         </div>
     </div>
 </div>

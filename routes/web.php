@@ -34,6 +34,7 @@ Route::prefix('')->group(function(){
         Route::get('/remove-qualification',[AlumniController::class,'removeQualification'])->name('users.profile.qualification.remove');
         Route::get('/remove-experience',[AlumniController::class,'removeExperience'])->name('users.profile.exp.remove');
         Route::post('/profile-update',[AlumniController::class,'updateProfile'])->name('user.profile.update');
+        Route::get('/alumni-council',[AlumniController::class,'showAlumniCouncil'])->name('user.alumnicouncil.show');
     });
 });
 

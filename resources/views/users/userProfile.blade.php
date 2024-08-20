@@ -11,7 +11,7 @@
                 <div class="col-12 col-md-10 p-md-4 d-flex flex-wrap justify-content-between align-items-center">
                     <div class="">
                         <span>{{$data->name}}</span><br>
-                        <small>{{$data->email}}</small>
+                        <small class="{{auth()->user()->role=='member'? 'd-none':''}}">{{$data->email}}</small>
                     </div>
                     <div class="py-2">
                         @if(auth()->user()->id == $data->id)
@@ -23,7 +23,7 @@
             <div class="section border-bottom py-4">
                 <h6 class="text-secondary">Personal Information</h6>
                 <div class="d-flex flex-wrap mt-3">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 {{auth()->user()->role=='member'? 'd-none':''}}">
                         <p class="text-secondary label">Phone Number</p>
                         <p>{{$data->alumniDetails->phone}}</p>
                     </div>
@@ -41,7 +41,7 @@
                         <p>{{$data->alumniDetails->batch}}</p>
                     </div>
                     <div class="col-12 col-md-6">
-                        <p class="text-secondary label">Application No</p>
+                        <p class="text-secondary label">Admission No</p>
                         <p>{{$data->alumniDetails->application_no}}</p>
                     </div>
                 </div>

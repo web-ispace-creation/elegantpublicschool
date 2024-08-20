@@ -22,7 +22,7 @@
                             <th>Batch</th>
                             <th>From</th>
                             <th>To</th>
-                            <th>Application No</th>
+                            <th>Admission No</th>
                             <th>Role</th>
                             <th width="100px">Action</th>
                         </tr>
@@ -72,8 +72,8 @@
                             <input type="date" class="form-control shadow-none mt-2"  name="to" readonly>
                         </div>
                         <div class="form-group">
-                            <label><b>Application No</b></label>
-                            <input type="text" class="form-control shadow-none mt-2"  placeholder="Enter Application No" name="application_no">
+                            <label><b>Admission No</b></label>
+                            <input type="text" class="form-control shadow-none mt-2"  placeholder="Enter Admission No" name="application_no">
                         </div>
                         <input type="text" name="id" class="d-none">
                     </div>

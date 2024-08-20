@@ -15,8 +15,7 @@ class AlumniController extends Controller
     }
     public function index(Request $request)
     {
-        $request->batch !== null ? $filter['batch'] = $request->batch : $filter['batch']=null;
-        $data = $this->service->getAllDataWithAlumniDetailsWithPaginate($filter);
+        $data = $this->service->getAllDataWithAlumniDetailsWithPaginate($request);
         return view('users.index',['data'=>$data]);
     }
     public function profile($id){
@@ -51,9 +50,13 @@ class AlumniController extends Controller
             $res = $this->service->updateProfile($request);
             return response()->json($res);
         } catch (\Throwable $th) {
-            dd($th);
             return response()->json(['status'=>500,'msg'=>'Sorry, something went wrong!']);
         }
+    }
+    public function showAlumniCouncil()
+    {
+        $res = $this->service->getCouncilMembers();
+        return view('users.alumni-council',['data'=>$res]);
     }
 } 
 
