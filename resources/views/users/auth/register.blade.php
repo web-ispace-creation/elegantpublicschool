@@ -25,14 +25,14 @@
                         </div>
                         <div class="ps-1">
                             <div class="bg-el-blue text-light text-center py-3  rounded">
-                                <h6>3K</h6>
-                                <h6>Registered Members</h6>
+                                <h6>1K+</h6>
+                                <h6>Connections</h6>
                             </div>
                         </div>
                         <div class="ps-1">
                             <div class="bg-el-blue text-light text-center py-3  rounded">
-                                <h6>3K</h6>
-                                <h6>Registered Members</h6>
+                                <h6>1K+</h6>
+                                <h6>Opportunities</h6>
                             </div>
                         </div>
                     </div>
@@ -48,9 +48,11 @@
                     @csrf
                     <div class="row row-cols-1 row-cols-md-2">
                       <div class="col">
+                        <label class="text-el-blue">Name</label>
                         <input type="text" class="form-control mb-3" placeholder="Enter full name" name="name">
                       </div>
                       <div class="col my-auto">
+                        <label class="text-el-blue">Image</label>
                         <input class="form-control mb-3" type="file" name='image'>
                       </div>
                     </div>
