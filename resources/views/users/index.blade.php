@@ -24,10 +24,10 @@
     </div>
     <div class="alumni-students d-flex flex-wrap scrolling-pagination">
         @foreach ($data as $item)
-        <div class="col-6 col-sm-4 col-md-3 px-2 pb-5">
+        <div class="col-6 col-sm-4 col-md-3 px-2 pb-3">
             <div class="card">
-                <div class="text-center">
-                    <img src="/storage/images/profile/{{$item->alumniDetails->image}}" class="card-img-top">
+                <div class="text-center bg-transparent">
+                    <img src="/storage/images/profile/{{$item->alumniDetails->image}}" class="object-fit-contain w-100">
                 </div>
                 <div class="card-body text-secondary">
                     <h6 class="card-title">{{ $item->name }}</h6>
