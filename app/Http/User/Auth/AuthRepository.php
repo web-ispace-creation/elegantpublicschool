@@ -24,6 +24,7 @@ class AuthRepository
             'batch' => $request->batch,
             'from' => $request->from,
             'to' => $request->to,
+            'final_reg_no' => $request->final_reg_no,
         ]);
 
         // Create Qualifications
@@ -65,7 +66,7 @@ class AuthRepository
         if ($user) {
             $user->role='member';
             $user->save();
-            $user->alumniDetails()->update(['application_no' => $request->application_no]);
+            $user->alumniDetails()->update(['application_no' => $request->application_no,'final_reg_no'=>$request->final_reg_no]);
         }
         return $user;
     }

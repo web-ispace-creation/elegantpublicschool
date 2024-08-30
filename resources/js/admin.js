@@ -50,6 +50,7 @@ $(document).ready(()=>{
 $(function () {
    var routeUrl = $('.dashboard .datatable').data('url');
    var table = $('.dashboard .datatable').DataTable({
+        order: [[0, 'desc']],
        processing: true,
        serverSide: true,
        type:'POST',
@@ -64,6 +65,7 @@ $(function () {
            {data: 'alumni_details.batch', name: 'batch'},
            {data: 'alumni_details.from', name: 'from'},
            {data: 'alumni_details.to', name: 'to'},
+           {data: 'alumni_details.final_reg_no', name: 'final_reg_no'},
            {data: 'alumni_details.application_no', name: 'application_no'},
            {data: 'role', name: 'role'},
            {data: 'action', name: 'action', orderable: false, searchable: false},
@@ -89,6 +91,7 @@ $(function () {
                     $("#adminVerifyStudentModal input[name='from']").val(response.alumni_details.from || '');
                     $("#adminVerifyStudentModal input[name='to']").val(response.alumni_details.to || '');
                     $("#adminVerifyStudentModal input[name='application_no']").val(response.alumni_details.application_no || '');
+                    $("#adminVerifyStudentModal input[name='final_reg_no']").val(response.alumni_details.final_reg_no  || '');
                     $("#adminVerifyStudentModal img").attr('src', `/storage/images/profile/${response.alumni_details.image || ''}`);
                 }
                 // var myModal = new bootstrap.Modal(document.getElementById('adminVerifyStudentModal'));

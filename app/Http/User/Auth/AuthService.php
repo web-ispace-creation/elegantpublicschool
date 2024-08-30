@@ -47,6 +47,9 @@ class AuthService
             'from' => 'required|date',
             'to' => 'required|date|after_or_equal:from',
             'password'=>'required|confirmed',
+            'final_reg_no'=>'required',
+        ], [
+            'final_reg_no.required' => 'Please fill 10th grade roll no!'
         ]);
             if ($validator->fails()) {
                 return ['msg'=>$validator->messages()->first(),'status'=>403];

@@ -16,7 +16,8 @@ class AlumniDetail extends Model
         'dob',
         'batch',
         'from',
-        'to'
+        'to',
+        'final_reg_no'
     ];
     public function user(){
         return $this->hasOne(User::class);

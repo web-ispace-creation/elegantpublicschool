@@ -22,6 +22,7 @@
                             <th>Batch</th>
                             <th>From</th>
                             <th>To</th>
+                            <th>10th Roll No</th>
                             <th>Admission No</th>
                             <th>Role</th>
                             <th width="100px">Action</th>
@@ -70,6 +71,10 @@
                         <div class="form-group">
                             <label><b>To</b></label>
                             <input type="date" class="form-control shadow-none mt-2"  name="to" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label><b>10th Roll No</b></label>
+                            <input type="text" class="form-control shadow-none mt-2" name="final_reg_no">
                         </div>
                         <div class="form-group">
                             <label><b>Admission No</b></label>

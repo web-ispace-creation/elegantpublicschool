@@ -15,7 +15,6 @@ class AdminIndexService{
     }
     public function getDataTable(){
         $data = $this->repository->getData();
-        // dd($data);
         return DataTables::of($data)->addIndexColumn()
             ->addColumn('image', function ($row) {
                 $url = asset('/storage/images/profile/' . (!empty($row->alumniDetails) ? $row->alumniDetails->image : ''));
@@ -45,6 +44,7 @@ class AdminIndexService{
     public function addAppnNmbr($request){
         $validator = Validator::make($request->all(), [
             'application_no' => 'required', 
+            'final_reg_no' => 'required', 
             'id' => 'required', 
         ]);
         if ($validator->fails()) {

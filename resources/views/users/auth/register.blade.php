@@ -96,6 +96,10 @@
                             <input type="date" class="form-control mb-3" name="to">
                         </div>
                     </div>
+                    <div class="col-6 mb-3">
+                        <label class="text-el-blue">10th Roll No:</label>
+                        <input type="text" class="form-control" name="final_reg_no">
+                    </div>
                     {{-- Education History --}}
                     <h6 class="text-el-blue">Education</h6>
                     <hr>

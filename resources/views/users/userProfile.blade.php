@@ -6,7 +6,7 @@
         <div class="user-profile-content bg-white">
             <div class="d-flex flex-wrap align-items-center border-bottom py-3">
                 <div class="col-12 col-md-2 profile-pic text-center py-2">
-                    <img src="/storage/images/profile/{{$data->alumniDetails->image}}" class="w-100 border circle">
+                    <img src="/storage/images/profile/{{$data->alumniDetails->image}}" class="w-100 border">
                 </div>
                 <div class="col-12 col-md-10 p-md-4 d-flex flex-wrap justify-content-between align-items-center">
                     <div class="">
@@ -43,6 +43,10 @@
                     <div class="col-12 col-md-6">
                         <p class="text-secondary label">Admission No</p>
                         <p>{{$data->alumniDetails->application_no}}</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <p class="text-secondary label">10th Roll No</p>
+                        <p>{{$data->alumniDetails->final_reg_no ?? 'Null'}}</p>
                     </div>
                 </div>
                 <div class="d-flex flex-wrap">
