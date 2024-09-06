@@ -17,7 +17,7 @@
     "src": "resources/css/app.scss"
   },
   "resources/css/user.scss": {
-    "file": "assets/user-CEBuXbOg.css",
+    "file": "assets/user-DmNQMiCz.css",
     "isEntry": true,
     "src": "resources/css/user.scss"
   },
@@ -25,7 +25,7 @@
     "css": [
       "assets/admin-CI1NqR3N.css"
     ],
-    "file": "assets/admin-CPtR16Ls.js",
+    "file": "assets/admin-D2LZQFQ7.js",
     "imports": [
       "resources/js/app.js"
     ],

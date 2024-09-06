@@ -7,6 +7,7 @@ window.DataTable = DataTable;
 import axios from 'axios';
 window.axios = axios;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+import './admin/tc'
 // import select2 from 'select2';
 // select2();
 // import 'select2';

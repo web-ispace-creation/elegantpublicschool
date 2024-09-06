@@ -4,7 +4,9 @@ use App\Http\Admin\Auth\AuthController;
 use App\Http\User\Auth\AuthController as userAuthController;
 use App\Http\Admin\Index\AdminIndexController;
 use App\Http\Admin\AlumniCouncil\AlumniCouncilController;
+use App\Http\Admin\Tc\AdminTcController;
 use App\Http\User\Alumni\AlumniController;
+use App\Http\User\Tc\TcController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -36,6 +38,11 @@ Route::prefix('')->group(function(){
         Route::post('/profile-update',[AlumniController::class,'updateProfile'])->name('user.profile.update');
         Route::get('/alumni-council',[AlumniController::class,'showAlumniCouncil'])->name('user.alumnicouncil.show');
     });
+    Route::prefix('tc')->group(function(){
+        Route::get('', [TcController::class, 'authForm'])->name('user.tc.form');
+        Route::post('download', [TcController::class, 'downloadTC'])->name('user.tc.download');
+    });
+    
 });
 
 // Admin
@@ -63,5 +70,11 @@ Route::prefix('admin')->group(function(){
         Route::get('/select-alumni-member',[AlumniCouncilController::class,'selectMember'])->name('admin.select-alumni-member');
         Route::post('/add-alumni-council',[AlumniCouncilController::class,'addCouncil'])->name('admin.add-alumni-council');
         Route::get('/get-alumni-council-datatable',[AlumniCouncilController::class,'getDataTable'])->name('admin.get.alumni.council.datatable');
+        Route::prefix('tc')->group(function(){
+            Route::get('',[AdminTcController::class,'index'])->name('admin.studentTc.index');
+            Route::post('add',[AdminTcController::class,'addData'])->name('admin.studentTc.add');
+            Route::get('get',[AdminTcController::class,'getDataTable'])->name('admin.studentTc.getDataTable');
+            Route::get('delete',[AdminTcController::class,'deleteData'])->name('admin.studentTc.delete');
+        });
     });
 });

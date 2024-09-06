@@ -18,6 +18,10 @@
         <span class="bi bi-people-fill"></span>
         <span class="ms-2">Alumni Council</span>
       </a>
+      <a  class="list-group-item list-group-item-action list-group-item-dark border-0 align-items-center {{ Route::is('admin.studentTc.index') ? 'active' : '' }}"   href="{{Route('admin.studentTc.index')}}"  aria-controls="hero">
+        <span class="bi bi-people-fill"></span>
+        <span class="ms-2">Student TC</span>
+      </a>
       
 
       {{-- <button class="list-group-item list-group-item-action list-group-item-dark border-0 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#slider-collapse">

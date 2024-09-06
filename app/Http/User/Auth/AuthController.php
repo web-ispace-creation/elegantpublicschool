@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use DataTables;
+use Illuminate\Support\Facades\Log;
 
 // use App\DataTables\UsersDataTable;
 class AuthController extends Controller

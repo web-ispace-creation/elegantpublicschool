@@ -5,7 +5,7 @@
 }
 
 $el-blue: #364473;
-$el-orange: #f16222 ;
+$el-orange: #dd7035 ;
 $lite-gray: #f6f6f6 ;
 
 .libre-franklin-font {
@@ -24,6 +24,12 @@ $lite-gray: #f6f6f6 ;
 }
 .bg-lite-gray{
   background-color: $lite-gray;
+}
+.bg-el-orange{
+  background-color: $el-orange;
+}
+.btn.bg-el-orange:hover{
+  background-color: #bf612d ;
 }
 .text-el-orange {
   color: $el-orange;
@@ -147,3 +153,14 @@ $lite-gray: #f6f6f6 ;
 .alumni-students .card img{
   height: 150px;
 }
+.height-400px{
+  height: 400px;
+}
+.zindex-1{
+  z-index: 1;
+}
+.w-50px{
+  width:50px
+}
+
+
